@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="struts" extends="struts-default">
+	
+	
+			<action name="txAjaxAction" class="com.action.txAjaxAction" method="calc">
+			<result name="success" type="stream">
+				<param name="contentType">text/html;charset=UTF-8</param>
+				<param name="inputName">ajaxInputStream</param>
+				<param name="bufferSize">1024</param>			
+			</result>
+		</action>
+
+		<!-- 
+		
+				员工查询和添加
+		
+		 -->
+		 
+		 
+		 
+		 <action name="userupdateAction" class="com.action.InsertUserAction" method="updateUsera">
+			<result name="success" type="redirectAction">queryUseraAction</result>
+			<result name="error">login.jsp</result>
+		</action>
+		 
+		<action name="deleteUseraAction" class="com.action.InsertUserAction" method="deleteUsera">
+			<result name="success" type="redirectAction">queryUseraAction</result>
+			<result name="error">login.jsp</result>
+		</action>
+		 
+		 
+		 <action name="queryUseraAction" class="com.action.InsertUserAction" method="UserQuery">
+			<result name="success">insertUsera.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		 
+		 
+		 
+		<action name="insertUseraAction" class="com.action.InsertUserAction" method="insertUser">
+			<result name="success" type="redirectAction">queryUseraAction</result>
+			<result name="error">login.jsp</result>
+		</action>
+
+
+
+
+		<!-- 
+			
+			数据字典 
+	
+		-->
+		
+		<action name="sjzddeleteAction" class="com.action.sjzdAction" method="sjzdDelete">
+			<result name="success" type="redirectAction">sjzdqueryAction</result>
+			<result name="error">login.jsp</result>
+		</action>
+		
+		
+		<action name="sjzdupdateAction" class="com.action.sjzdAction" method="sjzdUpdate">
+			<result name="success" type="redirectAction">sjzdqueryAction</result>
+			<result name="error">login.jsp</result>
+		</action>
+		
+		
+		<action name="sjzdinsertAction" class="com.action.sjzdAction" method="sjzdInsert">
+			<result name="success" type="redirectAction">sjzdqueryAction</result>
+			<result name="error">login.jsp</result>
+		</action>
+		
+		
+		<action name="sjzdqueryAction" class="com.action.sjzdAction" method="sjzdQuery">
+			<result name="success">sjzd.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		
+		
+		<action name="kqjlsjzdAction" class="com.action.sjzdAction" method="sjzdPath">
+			<result name="success">kqjl.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		
+		<action name="jqsqsjzdAction" class="com.action.sjzdAction" method="sjzdPath">
+			<result name="success">jqsq.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		
+		<action name="ccsqsjzdAction" class="com.action.sjzdAction" method="sjzdPath">
+			<result name="success">ccsq.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+
+
+		
+		<action name="LoginAction" class="com.action.LoginAction" method="verify">
+			<result name="success">index.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+	
+		
+		<action name="QueryAction" class="com.action.QueryAction" method="query">
+			<result name="success">kqcx.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		
+		<action name="jqQueryAction" class="com.action.AllQueryAction" method="jqQuery">
+			<result name="success">kqcx.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		
+		<action name="jbQueryAction" class="com.action.AllQueryAction" method="jqQuery">
+			<result name="success">jbcx.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		
+		<action name="txQueryAction" class="com.action.AllQueryAction" method="jqQuery">
+			<result name="success">txcx.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		
+		
+		<action name="kqjlAction" class="com.action.kqjlAction" method="kqjlInsert">
+			<result name="success">index.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		
+		
+		<action name="jqsqAction" class="com.action.jqsqAction" method="jqsqInsert">
+			<result name="success">index.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		
+		<action name="ccsqAction" class="com.action.ccsqAction" method="ccsqInsert">
+			<result name="success">index.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		
+		
+		<action name="jbsqAction" class="com.action.jbsqAction" method="jbsqInsert">
+			<result name="success">index.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		
+		
+		<action name="txsqAction" class="com.action.txsqAction" method="txsqInsert">
+			<result name="success">index.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		
+		
+		
+
+		
+		
+		
+		
+		
+	</package>
+	
+	
+
+</struts>
+
+
